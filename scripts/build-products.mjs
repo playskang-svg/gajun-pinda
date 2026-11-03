@@ -40,11 +40,11 @@ const FONT = "'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif"
 const card = async ({ images, main, sub, out }) => {
   const layers = []
   const n = images.length
-  const w = n === 1 ? 460 : 300
+  const w = n === 1 ? 460 : 250
   for (const [i, file] of images.entries()) {
     const input = await sharp(file).resize(w, w, { fit: 'contain', background: '#ffffff' }).png().toBuffer()
-    const left = n === 1 ? 50 : 40 + i * 150
-    const top = n === 1 ? 85 : 165 + (i % 2) * 60 - 30
+    const left = n === 1 ? 50 : 30 + i * 135
+    const top = n === 1 ? 85 : 190 + (i % 2) * 70 - 35
     layers.push({ input, left, top })
   }
   const size = main.length <= 22 ? 60 : main.length <= 36 ? 52 : 44
@@ -105,7 +105,7 @@ for (const [index, [slug, group]] of ORDER.entries()) {
     })
   }
   if (cardImages.length) {
-    await card({ images: cardImages.slice(0, 3), main: draft.category.headline || `${draft.category.title} TOP3`, sub: draft.category.lede.slice(0, 52), out: `public/og/best-${slug}.jpg` })
+    await card({ images: cardImages.slice(0, 3), main: draft.category.headline || `${draft.category.title} TOP3`, sub: draft.category.lede.split(/(?<=[.요다])\s/)[0], out: `public/og/best-${slug}.jpg` })
   }
 }
 writeFileSync('scripts/categories.json', JSON.stringify(categories, null, 1))

@@ -15,7 +15,7 @@
   "d1_databases": [
     {
       "binding": "D1",
-      "database_id": "PENDING-create-after-workers-paid",
+      "database_id": "8f3297d7-e52e-4958-9c8c-d7b39558c714",
       "database_name": "gajun-pinda",
       "remote": true
     }
