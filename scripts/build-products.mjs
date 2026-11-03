@@ -40,11 +40,11 @@ const FONT = "'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif"
 const card = async ({ images, main, sub, out }) => {
   const layers = []
   const n = images.length
-  const w = n === 1 ? 460 : 250
+  const w = n === 1 ? 460 : 178
   for (const [i, file] of images.entries()) {
     const input = await sharp(file).resize(w, w, { fit: 'contain', background: '#ffffff' }).png().toBuffer()
-    const left = n === 1 ? 50 : 30 + i * 135
-    const top = n === 1 ? 85 : 190 + (i % 2) * 70 - 35
+    const left = n === 1 ? 50 : 24 + i * 186
+    const top = n === 1 ? 85 : 226
     layers.push({ input, left, top })
   }
   const size = main.length <= 22 ? 60 : main.length <= 36 ? 52 : 44
@@ -107,6 +107,11 @@ for (const [index, [slug, group]] of ORDER.entries()) {
   if (cardImages.length) {
     await card({ images: cardImages.slice(0, 3), main: draft.category.headline || `${draft.category.title} TOP3`, sub: draft.category.lede.split(/(?<=[.요다])\s/)[0], out: `public/og/best-${slug}.jpg` })
   }
+}
+// Site-wide card: the rank-1 models of three different kinds of appliance.
+const defaults = ['robot-vacuum', 'air-fryer', 'air-purifier'].map((slug) => products.find((p) => p.category === slug && p.rank === 1)).filter(Boolean)
+if (defaults.length === 3) {
+  await card({ images: defaults.map((p) => `public${p.image}`), main: '가전은 많이 팔린 세 개만 비교해도 실패가 줄어요', sub: '판매량 TOP3, 구매 후기로 본 장단점', out: 'public/og-default.jpg' })
 }
 writeFileSync('scripts/categories.json', JSON.stringify(categories, null, 1))
 writeFileSync('scripts/products.json', JSON.stringify(products, null, 1))

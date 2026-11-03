@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 
 import { SITE_NAME, SITE_URL } from './payload'
 
-const DEFAULT_IMAGE = '/og-default.png'
+const DEFAULT_IMAGE = '/og-default.jpg'
 // Link previews cache images by URL, so bump this when the cards are redrawn.
 const IMAGE_VERSION = 2
 
