@@ -489,12 +489,11 @@ small {
 }
 
 .prose h2 {
-  margin: 56px 0 20px;
-  padding: 14px 18px;
-  background: var(--accent-soft);
-  border-left: 6px solid var(--accent);
-  border-radius: 10px;
+  margin: 56px 0 18px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
   font-size: clamp(21px, 2.4vw, 25px);
+  font-weight: 800;
   line-height: 1.35;
 }
 
@@ -1233,12 +1232,11 @@ small {
 
 .compare h2,
 .exam-books__title {
-  margin: 56px 0 20px;
-  padding: 14px 18px;
-  background: var(--accent-soft);
-  border-left: 6px solid var(--accent);
-  border-radius: 10px;
+  margin: 56px 0 18px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
   font-size: clamp(21px, 2.4vw, 25px);
+  font-weight: 800;
   line-height: 1.35;
 }
 
@@ -1415,12 +1413,11 @@ small {
 
 .fit h2,
 .expect h2 {
-  margin: 56px 0 20px;
-  padding: 14px 18px;
-  background: var(--accent-soft);
-  border-left: 6px solid var(--accent);
-  border-radius: 10px;
+  margin: 56px 0 18px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
   font-size: clamp(21px, 2.4vw, 25px);
+  font-weight: 800;
   line-height: 1.35;
 }
 
@@ -1757,10 +1754,10 @@ small {
 
 .prose blockquote {
   margin: 28px 0;
-  padding: 4px 0 4px 20px;
-  border-left: 3px solid var(--accent);
-  color: var(--accent-deep);
-  font-family: 'Gowun Batang', serif;
+  padding: 16px 20px;
+  border-radius: 12px;
+  background: var(--surface);
+  color: var(--ink);
   font-size: 18.5px;
   line-height: 1.85;
 }
@@ -2004,8 +2001,7 @@ small {
   gap: 2px;
   margin: 0;
   padding: 13px 15px;
-  border-left: 4px solid var(--accent);
-  border-radius: 8px;
+  border-radius: 10px;
   background: var(--surface);
   font-size: 15px;
   line-height: 1.6;
@@ -2209,7 +2205,6 @@ small {
 .proscons__con { border-top: 4px solid #e5372b; }
 .proscons ul { margin: 8px 0 0; padding-left: 18px; }
 .proscons li { margin: 4px 0; font-size: 15.5px; }
-.fit--skip li { border-left-color: #e5372b; }
 .talk__face { display: inline-grid; place-items: center; flex: 0 0 44px; width: 44px; height: 44px; border-radius: 50%; background: var(--accent); color: #fff; font-weight: 800; font-size: 15px; }
 .talk__face--guest { background: var(--ink-soft); }
 .cat-group { margin-top: 32px; }
