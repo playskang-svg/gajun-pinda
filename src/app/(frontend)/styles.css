@@ -2286,3 +2286,21 @@ small {
   color: var(--ink-soft);
   font-size: 13px;
 }
+/* Light-page overrides for rules inherited from the book site's dark hero and warm palette. */
+.phero .breadcrumbs, .page-head .breadcrumbs { color: var(--ink-soft); }
+.phero .breadcrumbs a, .page-head .breadcrumbs a { color: var(--ink-soft); }
+.phero .breadcrumbs li + li::before, .page-head .breadcrumbs li + li::before { color: var(--line); }
+.phero .breadcrumbs [aria-current], .page-head .breadcrumbs [aria-current] { color: var(--ink); }
+.loss-box { background: #fff4f2; }
+.site-footer { color: #c3c9d1; }
+.site-footer__nav a + a::before, .site-footer__note { color: #8e97a3; }
+@media (max-width: 860px) {
+  .phero { padding-top: 12px; }
+  .phero__inner { gap: 12px; }
+  .phero__img { max-width: 190px; }
+  .phero .breadcrumbs { display: none; }
+  .phero h1 { font-size: 21px; margin-top: 4px; }
+  .phero__tagline { font-size: 15px; margin-bottom: 6px; }
+  .phero__price { font-size: 21px; }
+  .buy-buttons { margin-top: 10px; }
+}
