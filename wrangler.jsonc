@@ -1,0 +1,24 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "main": "custom-worker.ts",
+  "name": "gajun-pinda",
+  "compatibility_date": "2025-08-15",
+  "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+  "assets": {
+    "directory": ".open-next/assets",
+    "binding": "ASSETS"
+  },
+  "observability": { "enabled": true },
+  "workers_dev": false,
+  "preview_urls": false,
+  "routes": [{ "pattern": "gajun.pinda.kr", "custom_domain": true }],
+  "d1_databases": [
+    {
+      "binding": "D1",
+      "database_id": "PENDING-create-after-workers-paid",
+      "database_name": "gajun-pinda",
+      "remote": true
+    }
+  ],
+  "r2_buckets": [{ "binding": "R2", "bucket_name": "gajun-pinda-media", "remote": true }]
+}
