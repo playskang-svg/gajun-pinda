@@ -34,6 +34,10 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true, 'max-image-preview': 'large', 'max-snippet': -1 },
   // Prices must not turn into phone links on mobile browsers.
   formatDetection: { telephone: false },
+  verification: {
+    google: 'CEA0ucYKdvQinPQQJKv1ca8e_Za7FMTuIlu161t-r_A',
+    other: { 'naver-site-verification': '549d7f69ccb441ab6f2ca89916dd3dcccd05fdb7' },
+  },
   icons: { icon: '/favicon.ico', apple: '/apple-touch-icon.png' },
   openGraph: {
     siteName: SITE_NAME,
